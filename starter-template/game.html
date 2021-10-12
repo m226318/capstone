@@ -18,15 +18,18 @@
           <div class="overall"></div>
             <div class="timer">
             </div>
-            <div class="restart" onclick=startGame()>
-        		<i class="fa fa-repeat"></i>
+            <div id="score">
+            </div>
+            <div class="restart">
             <p>Answer:
             <ul class ="answer "id="answer">
-              <li class="card-answer" type="diamond">
-
+              <li class="card-answer" type="diamond1">
                 <i class="fa fa-diamond"></i>
               </li>
-            </ul>
+              <p>AI:
+                <div class="card-AI" type="plane" onclick="showAI()">
+                <i class="fa fa-paper-plane-o"></i>
+              </div>
         	</div>
         </section>
 
@@ -83,9 +86,13 @@
 
         <div id="popup1" class="overlay">
             <div class="popup">
-                <a class="close" href=# >×</a>
                 <div class="content-2">
-                    <p>in <span id=totalTime> </span> </p>
+                    <input type="radio" id="lowtrust" name="fav_language" value="low">
+                    <label for="html">low</label>
+                    <input type="radio" id="medtrust" name="fav_language" value="medium">
+                    <label for="css">medium</label>
+                    <input type="radio" id="hightrust" name="fav_language" value="high">
+                    <label for="javascript">high</label>
                 </div>
                 <button id="play-again"onclick="playAgain()">
                     Play again</a>

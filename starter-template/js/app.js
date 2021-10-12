@@ -19,7 +19,8 @@ let matchedCard = document.getElementsByClassName("match");
  // array for opened cards
 var openedCards = [];
 
-
+var score=500;
+var bo=0;
 // @description shuffles cards
 // @param {array}
 // @returns shuffledarray
@@ -56,7 +57,7 @@ function startGame(){
         [].forEach.call(cards, function(item) {
             deck.appendChild(item);
         });
-        cards[i].classList.remove("show", "open", "match", "disabled");
+        cards[i].classList.remove("show", "open", "match", "disabled", "show1");
     }
     // reset moves
 
@@ -104,20 +105,22 @@ function matched(){
     openedCards[0].classList.remove("show", "open", "no-event");
   //  openedCards[1].classList.remove("show", "open", "no-event");
     openedCards = [];
+    score+=100;
+    document.getElementById('score').innerHTML=score;
+    console.log('right')
 }
 
 
 // description when cards don't match
 function unmatched(){
-    openedCards[0].classList.add("unmatched");
-    //openedCards[1].classList.add("unmatched");
-    disable();
-    setTimeout(function(){
-        openedCards[0].classList.remove("show", "open", "no-event","unmatched");
-      //  openedCards[1].classList.remove("show", "open", "no-event","unmatched");
-        enable();
-        openedCards = [];
-    },1100);
+  openedCards[0].classList.add("match", "disabled");
+//  openedCards[1].classList.add("match", "disabled");
+  openedCards[0].classList.remove("show", "open", "no-event");
+//  openedCards[1].classList.remove("show", "open", "no-event");
+  openedCards = [];
+  score-=100;
+  document.getElementById('score').innerHTML=score;
+  console.log('wrong')
 }
 
 
@@ -156,10 +159,23 @@ function startTimer(){
         second--;
         secondover--;
         if(second == 0 && minute ==0){
+          console.log("prit1")
           playAgain();
         }
+        if(second<59 && second >54){
+        for (var i = 0; i < cards.length; i++){
+            cards[i].classList.add("show", "open", "match", "disabled");
+        }
+      }
+      else {
+        for (var i = 0; i < cards.length; i++){
+            cards[i].classList.remove("show", "open", "match", "disabled");
+        }
+      }
         if(secondover == 0 && minuteover ==0){
-          location.replace("index.html");
+
+          playAgain();
+          //location.replace("index.html");
         }
 
         if(second <= 0){
@@ -188,7 +204,16 @@ function congratulations(){
     };
 }
 
-
+function showAI(){
+  ran=Math.floor(Math.random()*16)
+  if(bo===0){
+  for (var i = 0; i < cards.length; i++){
+    if(cards[i].type==="diamond"  || i==ran){
+      cards[i].classList.add("show1", "open", "match", "disabled");
+    }
+  }}
+  bo=1;
+};
 // @description close icon on modal
 function closeModal(){
     closeicon.addEventListener("click", function(e){
@@ -200,7 +225,10 @@ function closeModal(){
 
 // @desciption for user to play Again
 function playAgain(){
-    modal.classList.remove("show");
+    modal.classList.remove("show", "show1");
+    console.log(document.querySelector('input[name="fav_language"]:checked').value);
+    console.log('overall', minuteover, secondover, 'round', second)
+    bo=0;
     startGame();
 }
 

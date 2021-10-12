@@ -106,14 +106,13 @@ Type in the following statement as your signature.
 
                        <div class="row">
                          <forum>
-                          <div class="col"> <input id="consent" type="text" placeholder="I Consent" required >
+                          <div class="col"> <input type="text" placeholder="I Consent" required >
                         </div> <div class="col">  <input type="submit" value="Submit" onClick="redirect()">
                         </div></forum>
                          </div>
 
 <script>
 function redirect() {
-   console.log(document.getElementById('consent').value);
   location.replace("information.html")
 }
 </script>
