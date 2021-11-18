@@ -72,40 +72,13 @@ I have read this informed consent document and the material contained in it has 
 Type in your name as in place of your signature.
 
 <div class="row">
-<form method="post" onsubmit="return redirect()">
+<form method="post" onsubmit="return redirect()" action="consent.php">
 <label for="name">Enter Name:</label>
-<input type="text" required />
+<input type="text" required name="author"/>
 <input type="submit" value="Submit" />
 </form>
 </div>
-<?php
-   if(isset($_POST['add'])) {
-      $dbhost = 'localhost';
-      $dbuser = 'root';
-      $dbpass = 'root@123';
-      $dbname = 'AI';
-      $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-
-      if($mysqli->connect_errno ) {
-         printf("Connect failed: %s<br />", $mysqli->connect_error);
-         exit();
-      }
-      printf('Connected successfully.<br />');
-      $author = $_POST['author'];
-
-      $sql = "INSERT INTO consent ".
-         "(name, date) "."VALUES ".
-         "('$author')";
-
-      if ($mysqli->query($sql)) {
-         printf("Record inserted successfully.<br />");
-      }
-      if ($mysqli->errno) {
-         printf("Could not insert record into table: %s<br />", $mysqli->error);
-      }
-      $mysqli->close();
-   }
-?>
+s
 <script>
 function redirect() {
 window.open("information.html");
