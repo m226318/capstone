@@ -72,22 +72,14 @@ I have read this informed consent document and the material contained in it has 
 Type in your name as in place of your signature.
 
 <div class="row">
-<form method="post" onsubmit="return redirect()">
+<form method="post" action="consent.php">
 <label for="name">Enter Name:</label>
-<input type="text" required />
+<input type="text" required name="name"/>
 <input type="submit" value="Submit" />
 </form>
 </div>
-
-<script>
-function redirect() {
-window.open("information.html");
-}
-</script>
   </main>
-  <footer class="pt-5 my-5 text-muted border-top">
-  Created by MIDN Street and MIDN Barbu 2021;
-  </footer>
+
 </div>
   </body>
 </html>
