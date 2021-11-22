@@ -11,8 +11,13 @@
          exit();
       }
       printf('Connected successfully.<br />');
-      $author = $_POST['author'];
-
+      $username = $_POST['username'];
+$age = $_POST['age'];
+      $field = $_POST['field'];
+      $gpa = $_POST['gpa'];
+      $trust = $_POST['trust'];
+      $feeling = $_POST['feeling'];
+      $help = $_POST['help'];
       $sql = "INSERT INTO info ".
          "(username,age,field,gpa,trust,feeling,help) "."VALUES ".
          "('$username','$age','$field','$gpa','$trust','$feeling','$help')";
