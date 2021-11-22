@@ -44,14 +44,14 @@
   <main>
     <h1>Please fill out the following information</h1>
 
-    <form class="row g-3" required>
+    <form class="row g-3" method='post' action='info.php' required>
       <div class="col-md-3">
         <label for="inputEmail4" class="form-label">Player Username</label>
-        <input type="email" class="form-control" id="inputEmail4">
+        <input type="email" name="username" class="form-control" id="inputEmail4">
       </div>
       <div class="col-md-4">
         <label for="inputState" class="form-label">Age group</label>
-        <select id="age" required class="form-select">
+        <select id="age" name="age" required class="form-select">
           <option value="">  </option>
           <option>0-14</option>
           <option> 15-20</option>
@@ -62,7 +62,7 @@
       </div>
       <div class="col-md-5">
         <label for="inputState" class="form-label">What is your field of specialty</label>
-        <select id="field" required class="form-select">
+        <select id="field" name="field" required class="form-select">
           <option value="">  </option>
           <option>Humanities</option>
           <option> Science/Math</option>
@@ -72,7 +72,7 @@
       </div>
       <div class="col-md-6">
         <label for="inputState" class="form-label">What is/was your GPA?</label>
-        <select id="qpr" required class="form-select">
+        <select id="qpr" required name="gpa" class="form-select">
           <option value="">  </option>
           <option>2-2.5</option>
           <option> 2.5-3</option>
@@ -82,7 +82,7 @@
       </div>
       <div class="col-md-7">
         <label for="inputState" class="form-label">Gender Identity</label>
-        <select id="gender" required class="form-select">
+        <select id="gender" required name="gender" class="form-select">
           <option value="">  </option>
           <option>Male</option>
           <option>Female</option>
@@ -93,7 +93,7 @@
       </div>
       <div class="col-md-8">
         <label for="inputState" class="form-label">Trust in AI</label>
-        <select id="trust" required class="form-select">
+        <select id="trust" required name="trust" class="form-select">
           <option value="">  </option>
           <option>1</option>
           <option>2</option>
@@ -104,7 +104,7 @@
       </div>
       <div class="col-md-9">
         <label for="inputState" class="form-label">How do you feel today?</label>
-        <select id="feel" required class="form-select">
+        <select id="feel" required name="feeling" class="form-select">
           <option value="">  </option>
           <option>sad</option>
           <option>neutral</option>
@@ -113,7 +113,7 @@
       </div>
       <div class="col-md-9">
         <label for="inputState" class="form-label">How like getting help from strangers?(1-5, low to high)</label>
-        <select id="feel" required class="form-select">
+        <select id="feel" name="help"  required class="form-select">
           <option value="">  </option>
           <option>1</option>
           <option>2</option>
@@ -124,7 +124,7 @@
       </div>
       <div class="col-md-9">
         <label for="inputState" class="form-label">How do you feel about personlized add reccomendations?(1-5, dislike to like)</label>
-        <select required>
+        <select name="personal" required>
           <option value="">  </option>
           <option value="1">1</option>
           <option value="2">2</option>
