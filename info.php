@@ -21,7 +21,7 @@ $age = $_POST['age'];
       $gender=$_POST['gender'];
       $personal=$_POST['personal'];
       $sql = "INSERT INTO info ".
-         "(username,age,field,gpa,trust,feeling,help,gender,personal) "."VALUES ".
+         "(username,age,field,gpa,trust,feeling,help,gender,personalreccs) "."VALUES ".
          "('$username','$age','$field','$gpa','$trust','$feeling','$help','$gender','$personal')";
 
       if ($mysqli->query($sql)) {
