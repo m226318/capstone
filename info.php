@@ -18,9 +18,11 @@ $age = $_POST['age'];
       $trust = $_POST['trust'];
       $feeling = $_POST['feeling'];
       $help = $_POST['help'];
+      $gender=$_POST['gender'];
+      $personal=$_POST['personal'];
       $sql = "INSERT INTO info ".
-         "(username,age,field,gpa,trust,feeling,help) "."VALUES ".
-         "('$username','$age','$field','$gpa','$trust','$feeling','$help')";
+         "(username,age,field,gpa,trust,feeling,help,gender,personal) "."VALUES ".
+         "('$username','$age','$field','$gpa','$trust','$feeling','$help','$gender','$personal')";
 
       if ($mysqli->query($sql)) {
          printf("Record inserted successfully.<br />");
