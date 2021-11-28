@@ -1,17 +1,6 @@
 hello
 <?php
-   
-      $dbhost = 'localhost';
-      $dbuser = 'root';
-      $dbpass = 'CAPst0ne12!@';
-      $dbname = 'aitrust';
-      $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-echo("l");
-      if($mysqli->connect_errno ) {
-         printf("Connect failed: %s<br />", $mysqli->connect_error);
-         printf("\n");echo("l");
-         exit();
-      }echo("l");
+
       printf('Connected successfully.<br />');
       $username = $_POST['username'];
 $age = $_POST['age'];
@@ -33,7 +22,7 @@ printf($sql);
       if ($mysqli->errno) {
          printf("Could not insert record into table: %s<br />", $mysqli->error);
       }
-      $mysqli->close();
+
    }
 
 $newURL="game.html";
