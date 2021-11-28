@@ -21,18 +21,7 @@ hello
       $help = $_POST['help'];
       $gender=$_POST['gender'];
       $personal=$_POST['personal'];
-      $sql = "INSERT INTO info ".
-         "(id,username,age,field,gpa,trust,feeling,help,gender,personalreccs) "."VALUES ".
-         "(1,'$username','$age','$field','$gpa','$trust','$feeling',1,'$gender','$personal')";
-
-         printf("\n o);
-      if ($mysqli->query($sql)) {
-         printf("Record inserted successfully.<br />");
-      }
-      if ($mysqli->errno) {
-         printf("Could not insert record into table: %s<br />", $mysqli->error);
-      }
-
+   
 
 $newURL="game.html";
 $mysqli->close();
