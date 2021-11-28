@@ -26,6 +26,6 @@
       }
       $mysqli->close();
    }
-$newURL="ins.html";
+$newURL="information.html";
 header('Location: '.$newURL);
 ?>
