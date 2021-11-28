@@ -9,7 +9,7 @@
       if($mysqli->connect_errno ) {
          printf("Connect failed: %s<br />", $mysqli->connect_error);
          exit();
-      }
+      }printf("l");
       printf('Connected successfully.<br />');
       $username = $_POST['username'];
 $age = $_POST['age'];
@@ -23,10 +23,10 @@ $age = $_POST['age'];
       $sql = "INSERT INTO info ".
          "(username,age,field,gpa,trust,feeling,help,gender,personalreccs) "."VALUES ".
          "('$username','$age','$field','$gpa','$trust','$feeling','$help','$gender','$personal')";
-
+printf("l");
       if ($mysqli->query($sql)) {
          printf("Record inserted successfully.<br />");
-      }
+      }printf("l");
       if ($mysqli->errno) {
          printf("Could not insert record into table: %s<br />", $mysqli->error);
       }
