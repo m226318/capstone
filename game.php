@@ -11,18 +11,18 @@
       }
       printf('Connected successfully.<br />');
      
-      $username = $_POST['username'];
-      $age = $_POST['age'];
-      $field = $_POST['field'];
-      $gpa = $_POST['gpa'];
-      $trust = $_POST['trust'];
-      $feeling = $_POST['feeling'];
-      $help = $_POST['help'];
-      $gender=$_POST['gender'];
-      $personal=$_POST['personal'];
+      $roundnum = $_POST['roundnum'];
+      $roundtime = $_POST['roundtime'];
+      $timeleft = $_POST['timeleft'];
+      $aiused = $_POST['aiused'];
+      $aiboxnum = $_POST['aiboxnum'];
+      $correct = $_POST['correct'];
+      $basescore = $_POST['basescore'];
+      $bonusscore=$_POST['bonusscore'];
+      $clickedaibox=$_POST['clickedaibox'];
    $sql = "INSERT INTO info ". //need to add cookies to store user id and replace 1 here
-         "(id,username,age,field,gpa,trust,feeling,help,gender,personalreccs) "."VALUES ".
-         "(1,'$username','$age','$field','$gpa','$trust','$feeling',$help,'$gender','$personal')";
+         "(id,roundnum,roundtime,timeleft,aiused,aiboxnum,correct,basescore,bonusscore,clickedaibox) "."VALUES ".
+         "(1,'$roundnum','$roundtime','$timeleft','$aiused','$aiboxnum','$correct',$basescore,'$bonusscore','$clickedaibox')";
 
     
 printf($sql);
@@ -34,5 +34,5 @@ if ($mysqli->query($sql)) {
       }
 $newURL="ins.html";
 $mysqli->close();
-header('Location: '.$newURL);
+
 ?>
