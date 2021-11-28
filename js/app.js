@@ -16,6 +16,12 @@ let matchedCard = document.getElementsByClassName("match");
  // declare modal
  let modal = document.getElementById("popup1")
 
+let mysql = require('mysql');
+let config = require('./config.js');
+let connection = mysql.createConnection(config);
+
+let stmt = `INSERT INTO todos(title,completed)
+            VALUES(?,?)`;
  // array for opened cards
 var openedCards = [];
 var roundnumber=0;
