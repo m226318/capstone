@@ -22,7 +22,7 @@ $age = $_POST['age'];
       $personal=$_POST['personal'];
       $sql = "INSERT INTO info ".
          "(id,username,age,field,gpa,trust,feeling,help,gender,personalreccs) "."VALUES ".
-         "('1','$username','$age','$field','$gpa','$trust','$feeling','$help','$gender','$personal')";
+         "(1,'$username','$age','$field','$gpa','$trust','$feeling',$help,'$gender','$personal')";
 printf("l");
       if ($mysqli->query($sql)) {
          printf("Record inserted successfully.<br />");
