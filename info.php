@@ -8,8 +8,9 @@
 
       if($mysqli->connect_errno ) {
          printf("Connect failed: %s<br />", $mysqli->connect_error);
+         printf("l\n");
          exit();
-      }printf("l");
+      }
       printf('Connected successfully.<br />');
       $username = $_POST['username'];
 $age = $_POST['age'];
@@ -23,7 +24,7 @@ $age = $_POST['age'];
       $sql = "INSERT INTO info ".
          "(id,username,age,field,gpa,trust,feeling,help,gender,personalreccs) "."VALUES ".
          "(1,'$username','$age','$field','$gpa','$trust','$feeling',$help,'$gender','$personal')";
-printf("l");
+printf($sql);
       if ($mysqli->query($sql)) {
          printf("Record inserted successfully.<br />");
       }printf("l");
