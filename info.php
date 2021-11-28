@@ -27,6 +27,12 @@ hello
 
     
 printf($sql);
+if ($mysqli->query($sql)) {
+         printf("Record inserted successfully.<br />");
+      }
+      if ($mysqli->errno) {
+         printf("Could not insert record into table: %s<br />", $mysqli->error);
+      }
 $newURL="game.html";
 $mysqli->close();
 ?>
