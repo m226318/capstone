@@ -26,7 +26,7 @@ hello
          "(1,'$username','$age','$field','$gpa','$trust','$feeling',1,'$gender','$personal')";
 
     
-
+printf($sql);
 $newURL="game.html";
 $mysqli->close();
 ?>
