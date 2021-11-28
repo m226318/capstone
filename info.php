@@ -1,5 +1,5 @@
 <?php
-   if(isset($_POST['add'])) {
+   
       $dbhost = 'localhost';
       $dbuser = 'root';
       $dbpass = 'CAPst0ne12!@';
@@ -10,7 +10,7 @@
          printf("Connect failed: %s<br />", $mysqli->connect_error);
          printf("l\n");
          exit();
-      }
+     
       printf('Connected successfully.<br />');
       $username = $_POST['username'];
 $age = $_POST['age'];
