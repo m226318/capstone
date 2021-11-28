@@ -8,7 +8,7 @@
 
       if($mysqli->connect_errno ) {
          printf("Connect failed: %s<br />", $mysqli->connect_error);
-         printf("l\n");
+         printf("\n");
          exit();
      
       printf('Connected successfully.<br />');
@@ -25,6 +25,7 @@ $age = $_POST['age'];
          "(id,username,age,field,gpa,trust,feeling,help,gender,personalreccs) "."VALUES ".
          "(1,'$username','$age','$field','$gpa','$trust','$feeling',$help,'$gender','$personal')";
 printf($sql);
+         printf("\n o);
       if ($mysqli->query($sql)) {
          printf("Record inserted successfully.<br />");
       }printf("l");
@@ -33,10 +34,8 @@ printf($sql);
       }
       $mysqli->close();
    }
-printf("l");
+
 $newURL="game.html";
 
 ?>
-© 2021 GitHub, Inc.
-Terms
-Privac
+
