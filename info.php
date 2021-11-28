@@ -23,7 +23,7 @@ hello
       $personal=$_POST['personal'];
       $sql = "INSERT INTO info ".
          "(id,username,age,field,gpa,trust,feeling,help,gender,personalreccs) "."VALUES ".
-         "(1,'$username','$age','$field','$gpa','$trust','$feeling',$help,'$gender','$personal')";
+         "(1,'$username','$age','$field','$gpa','$trust','$feeling',1,'$gender','$personal')";
 
          printf("\n o);
       if ($mysqli->query($sql)) {
