@@ -35,6 +35,6 @@ hello
 
 
 $newURL="game.html";
-
+$mysqli->close();
 ?>
 
