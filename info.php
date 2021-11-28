@@ -1,4 +1,4 @@
-hello
+
 <?php
  $dbhost = 'localhost';
       $dbuser = 'root';
