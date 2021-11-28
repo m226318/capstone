@@ -32,8 +32,9 @@ $age = $_POST['age'];
       }
       $mysqli->close();
    }
+printf("l");
 $newURL="game.html";
-header('Location: '.$newURL);
+
 ?>
 © 2021 GitHub, Inc.
 Terms
