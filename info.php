@@ -33,7 +33,8 @@ if ($mysqli->query($sql)) {
       if ($mysqli->errno) {
          printf("Could not insert record into table: %s<br />", $mysqli->error);
       }
-$newURL="game.html";
+$newURL="ins.html";
 $mysqli->close();
+header('Location: '.$newURL);
 ?>
 
