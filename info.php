@@ -10,7 +10,7 @@
          printf("Connect failed: %s<br />", $mysqli->connect_error);
          printf("\n");
          exit();
-     
+      }
       printf('Connected successfully.<br />');
       $username = $_POST['username'];
 $age = $_POST['age'];
