@@ -23,7 +23,6 @@ printf($sql);
          printf("Could not insert record into table: %s<br />", $mysqli->error);
       }
 
-   }
 
 $newURL="game.html";
 
