@@ -21,9 +21,9 @@ hello
       $help = $_POST['help'];
       $gender=$_POST['gender'];
       $personal=$_POST['personal'];
-   $sql = "INSERT INTO info ".
+   $sql = "INSERT INTO info ". //need to add cookies to store user id and replace 1 here
          "(id,username,age,field,gpa,trust,feeling,help,gender,personalreccs) "."VALUES ".
-         "(1,'$username','$age','$field','$gpa','$trust','$feeling',1,'$gender','$personal')";
+         "(1,'$username','$age','$field','$gpa','$trust','$feeling',$help,'$gender','$personal')";
 
     
 printf($sql);
