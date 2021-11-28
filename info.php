@@ -1,3 +1,4 @@
+hello
 <?php
    
       $dbhost = 'localhost';
@@ -5,12 +6,12 @@
       $dbpass = 'CAPst0ne12!@';
       $dbname = 'aitrust';
       $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-
+echo("l");
       if($mysqli->connect_errno ) {
          printf("Connect failed: %s<br />", $mysqli->connect_error);
-         printf("\n");
+         printf("\n");echo("l");
          exit();
-      }
+      }echo("l");
       printf('Connected successfully.<br />');
       $username = $_POST['username'];
 $age = $_POST['age'];
