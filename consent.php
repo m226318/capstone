@@ -25,7 +25,7 @@
          printf("Could not insert record into table: %s<br />", $mysqli->error);
       }
    
-   
+   $mysqli->close();
 $newURL="information.html";
 header('Location: '.$newURL);
 ?>
