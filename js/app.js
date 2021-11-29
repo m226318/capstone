@@ -50,6 +50,31 @@ function shuffle(array) {
 };
 
 
+
+
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "CAPst0ne12!@",
+  database: "aitrust"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  var sql = "INSERT INTO info(id,roundnum,roundtime,timeleft,aiused,aiboxnum,correct,basescore,bonusscore,clickedaibox) VALUES (?,?,?,?,?,?,?,?,?,?)";
+  var vas = [1,roundnum,roundtime,timeleft,aiused,aiboxnum,correct,basescore,bonusscore,clickedaibox];
+ con.query(sql,vas, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+  });
+});
+
+
+
+
 // @description shuffles cards when page is refreshed / loads
 console.log(document.getElementById('n'));
  console.log(Date());
