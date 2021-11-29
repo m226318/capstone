@@ -24,6 +24,7 @@ let stmt = `INSERT INTO todos(title,completed)
             VALUES(?,?)`;
  // array for opened cards
 var openedCards = [];
+var airec=[];
 var roundnumber=0;
 var secondscore=0;
 var score=500;
@@ -32,6 +33,12 @@ var randbox=0;
 var boxflag = false;
 var randanswer=0;
 var rightcard;
+var roundnum=0;
+var numaiboxes=0;
+var clickedaibox=false;
+var correct = false;
+var playerid;
+var aiboxclicked=false;
 // @description shuffles cards
 // @param {array}
 // @returns shuffledarray
@@ -61,16 +68,7 @@ var con = mysql.createConnection({
   database: "aitrust"
 });
 
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-  var sql = "INSERT INTO info(id,roundnum,roundtime,timeleft,aiused,aiboxnum,correct,basescore,bonusscore,clickedaibox) VALUES (?,?,?,?,?,?,?,?,?,?)";
-  var vas = [1,roundnum,roundtime,timeleft,aiused,aiboxnum,correct,basescore,bonusscore,clickedaibox];
- con.query(sql,vas, function (err, result) {
-    if (err) throw err;
-    console.log("1 record inserted");
-  });
-});
+
 
 
 
@@ -81,12 +79,16 @@ console.log(document.getElementById('n'));
 document.body.onload = startGame();
 
 
-// @description function to start a new play
+// @description function to start a new 
+
 function startGame(){
   boxflag = false;
+ aiboxclicked=false;
+ correct=false;
+ numaiboxes=0;
   randbox = Math.floor(Math.random() * 10)+8;
   randanswer= Math.floor(Math.random() * cards.length);
-
+ clickedaibox=false;
   console.log(randbox)
     roundnumber+=1;
     console.log("roundnumber= ", roundnumber);
@@ -128,14 +130,17 @@ var displayCard = function (){
     this.classList.toggle("disabled");
 };
 
-
+function checkinai(x){
+ return airec.includes(x);
+};
 // @description add opened cards to OpenedCards list and check if cards are match or not
 function cardOpen() {
     openedCards.push(this);
     var len = openedCards.length;
     if(len === 1){
-
+     aiboxclicked=checkinai(openedCards[0].type);
         if(openedCards[0].type === rightcard.type){
+          
             matched();
 
         } else {
@@ -154,7 +159,8 @@ function matched(){
     openedCards[0].classList.remove("show", "open", "no-event");
   //  openedCards[1].classList.remove("show", "open", "no-event");
     openedCards = [];
-    score+=100;
+    score+=500;
+    correct=true;
     document.getElementById('score').innerHTML=score+secondscore;
     console.log('correct')
 }
@@ -268,19 +274,22 @@ function congratulations(){
 }
 
 function showAI(){
+ clickedaibox=true;
   score-=50
   ran=Math.floor(Math.random()*16)
   console.log('AI_used')
   console.log('time left toselect AI=',second);
   x=0;
   if(bo===0){
-  for (var i = 0; i < cards.length; i++){
-    if(cards[i].type==="diamond"  || i==ran){
+  for (var i = 0; i < cards.length; i++){//diamond here??? whut
+    if(cards[i].type===rightcard.type  || i==ran){
       cards[i].classList.add("show1", "open", "match", "disabled");
+     airec.push(cards[i].type);
       x+=1
     }
   }}
   console.log('number boxes AI=', x);
+ numaiboxes=x;
   bo=1;
 };
 // @description close icon on modal
@@ -303,9 +312,37 @@ document.body.onkeyup = function(e){
     }
 }
 
-
+function setid(x,y){
+  con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  //fix id with set far from consent
+  var sql = "select id from consent where name = ? and date = ?)";
+  var vas = [x,y];
+  con.query(sql,vas, function (err, result) {
+    if (err) throw err;
+    console.log("retrived",result);
+   playerid=result;
+  });
+});
+ connection.end();
+}
 // @desciption for user to play Again
 function playAgain(){
+ roundnum=roundnum+1;
+ con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  //fix id with set far from consent
+  var sql = "INSERT INTO info(id,roundnum,roundtime,timeleft,aiused,aiboxnum,correct,basescore,bonusscore,clickedaibox) VALUES (?,?,?,?,?,?,?,?,?,?)";
+  var vas = [playerid,roundnum,String(minute)+':'+String(second),String(minuteover)+':'+String(secondover),clickedaibox,numaiboxes,correct,score,secondscore,aiboxclicked];
+  con.query(sql,vas, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+  });
+});
+ connection.end();
+   //send data sql
     modal.classList.remove("show", "show1");
     console.log(document.querySelector('input[name="fav_language"]:checked').value);
     console.log('overall', minuteover, secondover, 'round', second)
