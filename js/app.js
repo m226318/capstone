@@ -334,6 +334,8 @@ function playAgain(){
   if (err) throw err;
   console.log("Connected!");
   //fix id with set far from consent
+  window.alert(document.cookie);
+  playerid=1
   var sql = "INSERT INTO info(id,roundnum,roundtime,timeleft,aiused,aiboxnum,correct,basescore,bonusscore,clickedaibox) VALUES (?,?,?,?,?,?,?,?,?,?)";
   var vas = [playerid,roundnum,String(minute)+':'+String(second),String(minuteover)+':'+String(secondover),clickedaibox,numaiboxes,correct,score,secondscore,aiboxclicked];
   con.query(sql,vas, function (err, result) {
