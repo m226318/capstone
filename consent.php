@@ -28,7 +28,11 @@
       $sql = "SELECT id FROM consent where name='$author'and date = '$date' ";
       $result = $mysqli->query($sql);
       printf($result);
-   
+  printf("n");
+      $sql = "SELECT id FROM consent where name=\'$author\'and date = \'$date\' ";
+      $result = $mysqli->query($sql);
+      printf($result);
+      printf("end");
    $mysqli->close();
 $newURL="information.htm";
 header('Location: '.$newURL);
