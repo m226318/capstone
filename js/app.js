@@ -16,15 +16,7 @@ let matchedCard = document.getElementsByClassName("match");
  // declare modal
  let modal = document.getElementById("popup1")
 
-let mysql = require('mysql');
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "CAPst0ne12!@",
-  database: "aitrust"
-});
 
-let connection = mysql.createConnection(con);
 
 let stmt = `INSERT INTO todos(title,completed)
             VALUES(?,?)`;
