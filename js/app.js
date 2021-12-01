@@ -323,6 +323,7 @@ function setid(x){
     if (err) throw err;
     console.log("retrived",result);
    playerid=result;
+   console.log("set id",x);
   });
 });
  connection.end();
