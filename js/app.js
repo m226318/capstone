@@ -335,6 +335,7 @@ xhr.send({ playerid:playerid,roundnum: roundnum,roundtime:String(minute)+':'+Str
     modal.classList.remove("show", "show1");
     console.log(document.querySelector('input[name="fav_language"]:checked').value);
     console.log('overall', minuteover, secondover, 'round', second)
+ window.location.replace("../game.php");
     bo=0;
     startGame();
 }
