@@ -328,14 +328,9 @@ function playAgain(){
   //fix id with set far from consent
   window.alert(document.cookie);
   playerid=1
-  var sql = "INSERT INTO info(id,roundnum,roundtime,timeleft,aiused,aiboxnum,correct,basescore,bonusscore,clickedaibox) VALUES (?,?,?,?,?,?,?,?,?,?)";
-  var vas = [playerid,roundnum,String(minute)+':'+String(second),String(minuteover)+':'+String(secondover),clickedaibox,numaiboxes,correct,score,secondscore,aiboxclicked];
-  con.query(sql,vas, function (err, result) {
-    if (err) throw err;
-    console.log("1 record inserted");
-  });
-});
- connection.end();
+  //need post it
+  $.post("game.php", { playerid:playerid,roundnum: roundnum,roundtime:String(minute)+':'+String(second),timeleft:String(minuteover)+':'+String(secondover),clickedaibox:clickedaibox,aiboxnum:numaiboxes,correct:correct,score:score,bonusscore: secondscore,aiused: aiboxclicked});
+
    //send data sql
     modal.classList.remove("show", "show1");
     console.log(document.querySelector('input[name="fav_language"]:checked').value);
