@@ -23,7 +23,7 @@ print("start");
       $clickedaibox=$_POST['clickedaibox'];
    $sql = "INSERT INTO info ". //need to add cookies to store user id and replace 1 here
          "(id,roundnum,roundtime,timeleft,aiused,aiboxnum,correct,basescore,bonusscore,clickedaibox) "."VALUES ".
-         "(1,'$roundnum','$roundtime','$timeleft','$aiused','$aiboxnum','$correct',$basescore,'$bonusscore','$clickedaibox')";
+         "($id,'$roundnum','$roundtime','$timeleft','$aiused','$aiboxnum','$correct',$basescore,'$bonusscore','$clickedaibox')";
 
     
 printf($sql);
