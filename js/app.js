@@ -327,7 +327,7 @@ function playAgain(){
   playerid=document.cookie.split('=')[1];
   //need post it
 var xhr = new XMLHttpRequest();
-xhr.open("POST", "https://reqbin.com/echo/post/json");
+xhr.open("POST", "https://aimemorygame.usna-cyber.org/game.php");
 xhr.setRequestHeader("Accept", "application/json");
 xhr.setRequestHeader("Content-Type", "application/json");
 var timo=String(minute)+':'+String(second);
