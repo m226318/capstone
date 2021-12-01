@@ -35,6 +35,6 @@ if ($mysqli->query($sql)) {
       }
 $newURL="ins.html";
 $mysqli->close();
-
+header('Location: '.$newURL);
 ?>
 
