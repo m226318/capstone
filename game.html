@@ -16,20 +16,21 @@
             <h1>Memory Game</h1>
         </header>
         <section class="score-panel">
-          <div id="over"><div class="overall"><SPAN id='timeover'></SPAN></div></div>
-            <div class="timer">
+          <div id="over"> Overall Timer:<div class="overall"><SPAN id='timeover'></SPAN></div></div>
+          Round timer:<div class="timer">
             </div>
             <div id="scoreprint">
               <br />Score: <SPAN id='score'></SPAN>
             </div>
             <div class="restart">
 
-            <ul class ="answer "id="answer">Answer:
+            <ul class ="answer "id="answer"><b>Find:</b>
               <li class="card-answer" type="diamond1">
                 <i id ="ans" class="ex"></i>
               </li>
               <div id="AII">
-                <div class="card-AI" type="plane" onclick="showAI()"> AI:<i class="fa fa-paper-plane-o"></i>
+                <div class="card-AI" type="plane" onclick="showAI()"> AI:
+                  <img src="bill.jfif" alt="bill"  with="150px" height="80px"></i>
               </div>
         	</div>
           </div>
@@ -63,19 +64,23 @@
             <li class="card" type="bicycle">
                 <i class="fa fa-bicycle"></i>
             </li>
-            <li class="card" type="bomb">
-                <i class="fa fa-bomb"></i>
+          </li>
+          <li class="card" type="check">
+          <i class="fa fa-check"></i>
+          <li>
+            <li class="card" type="plane">
+                <i class="fa fa-paper-plane-o"></i>
             </li>
-            <li class="card" type="cube">
-                <i class="fa fa-cube"></i>
+            <li class="card" type="bolt" >
+                <i class="fa fa-bolt"></i>
             </li>
         </ul>
 
-        <div id='shape' style="width:150px;height:50px;border:1px solid#000;background-color:blue;visibility:hidden;"></div>
+        <div id='shape' style="width:50px;height:150px;border:1px solid#000;background-color:blue;visibility:hidden;"></div>
         <div id="popup1" class="overlay">
             <div class="popup">
                 <div class="content-2">
-                  <p> How much do you trust AI?<br>
+                  <p> How confident are you in your choice?<br>
                     <input type="radio" id="lowtrust" name="fav_language" value="low">
                     <label for="html">low</label>
                     <input type="radio"  checked id="medtrust" name="fav_language" value="medium">
