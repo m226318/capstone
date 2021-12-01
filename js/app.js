@@ -328,9 +328,9 @@ function playAgain(){
   //need post it
  var xhr = new XMLHttpRequest();
  xhr.open("POST", '../game.php');
-xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-xhr.send({ playerid:playerid,roundnum: roundnum,roundtime:String(minute)+':'+String(second),timeleft:String(minuteover)+':'+String(secondover),clickedaibox:clickedaibox,aiboxnum:numaiboxes,correct:correct,score:score,bonusscore: secondscore,aiused: aiboxclicked});
-
+xhr.setRequestHeader("Content-Type", "application/json");
+var data =JSON.stringify({ "playerid":playerid,"roundnum": roundnum,"roundtime":String(minute)+':'+String(second),"timeleft":String(minuteover)+':'+String(secondover),"clickedaibox":clickedaibox, "aiboxnum":numaiboxes,"correct":correct,"score":score, "bonusscore": secondscore,"aiused": aiboxclicked});
+xhr.send(data);
    //send data sql
     modal.classList.remove("show", "show1");
     console.log(document.querySelector('input[name="fav_language"]:checked').value);
