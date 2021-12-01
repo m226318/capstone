@@ -4,7 +4,9 @@
       $dbpass = 'CAPst0ne12!@';
       $dbname = 'aitrust';
       $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-
+foreach ($_POST as $key => $value) {
+    echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+}
       if($mysqli->connect_errno ) {
          printf("Connect failed: %s<br />", $mysqli->connect_error);
          exit();
