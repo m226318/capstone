@@ -17,8 +17,14 @@ let matchedCard = document.getElementsByClassName("match");
  let modal = document.getElementById("popup1")
 
 let mysql = require('mysql');
-let config = require('./config.js');
-let connection = mysql.createConnection(config);
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "CAPst0ne12!@",
+  database: "aitrust"
+});
+
+let connection = mysql.createConnection(con);
 
 let stmt = `INSERT INTO todos(title,completed)
             VALUES(?,?)`;
@@ -60,12 +66,6 @@ function shuffle(array) {
 
 
 
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "CAPst0ne12!@",
-  database: "aitrust"
-});
 
 
 
