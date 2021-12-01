@@ -31,25 +31,15 @@
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+   $id= $row["id"];
   }
 } else {
   echo "0 results";
 }
-  printf("lnnnn");
-      $sql = "SELECT id FROM consent where name=\'$author\'and date = \'$date\' ";
-      $result = $mysqli->query($sql);
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-  }
-} else {
-  echo "0 results";
-}
-      printf($result);
-      printf("end");
+  
    $mysqli->close();
+$cookie_name = "user";
+setcookie($cookie_name,$id,time()+900,'/');
 $newURL="information.html";
 header('Location: '.$newURL);
 ?>
