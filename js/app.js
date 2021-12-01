@@ -164,7 +164,7 @@ function unmatched(){
   openedCards[0].classList.remove("show", "open", "no-event");
 //  openedCards[1].classList.remove("show", "open", "no-event");
   openedCards = [];
-  score-=100;
+  
   document.getElementById('score').innerHTML=score+secondscore;
   console.log('wrong')
 }
