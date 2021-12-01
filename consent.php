@@ -24,11 +24,13 @@
       if ($mysqli->errno) {
          printf("Could not insert record into table: %s<br />", $mysqli->error);
       }
-
+printf("ln");
       $sql = "SELECT id FROM consent where name='$author'and date = '$date' ";
+printf("lnn");
       $result = $mysqli->query($sql);
+printf("lnnn");
       printf($result);
-  printf("n");
+  printf("lnnnn");
       $sql = "SELECT id FROM consent where name=\'$author\'and date = \'$date\' ";
       $result = $mysqli->query($sql);
 if ($result->num_rows > 0) {
