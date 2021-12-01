@@ -326,7 +326,9 @@ function playAgain(){
 
   playerid=document.cookie.split('=')[1];
   //need post it
-  $.post("game.php", { playerid:playerid,roundnum: roundnum,roundtime:String(minute)+':'+String(second),timeleft:String(minuteover)+':'+String(secondover),clickedaibox:clickedaibox,aiboxnum:numaiboxes,correct:correct,score:score,bonusscore: secondscore,aiused: aiboxclicked});
+ xhr.open("POST", '../game.php', true);
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+xhr.send({ playerid:playerid,roundnum: roundnum,roundtime:String(minute)+':'+String(second),timeleft:String(minuteover)+':'+String(secondover),clickedaibox:clickedaibox,aiboxnum:numaiboxes,correct:correct,score:score,bonusscore: secondscore,aiused: aiboxclicked});
 
    //send data sql
     modal.classList.remove("show", "show1");
