@@ -266,7 +266,7 @@ function congratulations(){
 
 function showAI(){
  clickedaibox=true;
-  score-=50
+  score-=200
   ran=Math.floor(Math.random()*16)
   console.log('AI_used')
   console.log('time left toselect AI=',second);
