@@ -322,9 +322,6 @@ function setid(x){
 // @desciption for user to play Again
 function playAgain(){
  roundnum=roundnum+1;
- con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
   //fix id with set far from consent
   window.alert(document.cookie);
   playerid=1
