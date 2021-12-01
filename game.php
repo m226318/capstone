@@ -9,6 +9,7 @@
          printf("Connect failed: %s<br />", $mysqli->connect_error);
          exit();
       }
+print("start");
       printf('Connected successfully.<br />');
      
       $roundnum = $_POST['roundnum'];
@@ -32,7 +33,7 @@ if ($mysqli->query($sql)) {
       if ($mysqli->errno) {
          printf("Could not insert record into table: %s<br />", $mysqli->error);
       }
-$newURL="ins.html";
+$newURL="game.html";
 $mysqli->close();
 
 ?>
