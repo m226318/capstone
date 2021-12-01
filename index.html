@@ -7,8 +7,7 @@
     <title>Consent Form</title>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- 
-	</head>
+  </head>
   <body>
 
 <div class="col-lg-8 mx-auto p-3 py-md-5">
@@ -20,7 +19,7 @@
 
 PARTICIPANT INFORMED CONSENT FORM<br>
 
-The following information is provided to inform you about the research project and your participation in it. Please read this form carefully and feel free to ask any questions you may have about this study and the information given below.<br>
+The following information is provided to inform you about the research project and your participation in it. Please read this form carefully and feel free to send any questions about this study and your participation in it to m220240@usna.edu or any  other contact point in bullet #9.<br>
 
 Your participation in this research study is voluntary. You are also free to withdraw from this study at any time. Closing the webpage at any time will terminate the experiment. In the event new information becomes available that may affect the risks or benefits associated with this research study or your willingness to participate in it, you will be notified so that you can make an informed decision whether or not to continue your participation in this study.
 <br><br>
@@ -65,17 +64,19 @@ No personal information is collected during this experiment. THe experiment is a
 STATEMENT BY PERSON AGREEING TO PARTICIPATE IN THIS STUDY<br><br>
 I have read this informed consent document and the material contained in it has been explained to me. I understand each part of the document, all my questions have been answered, and I freely and voluntarily choose to participate in this study.   I can choose to withdraw from this research project at any time without penalty.
 <br>
+<input type="checkbox" required id="consentbox" name="check1" value="agree">
+<label for="checkbox1"> I agree </label><br>
 </p>
   <p class="fs-5 col-md-8" id="date">
 </p> <script> document.getElementById("date").innerHTML = "Date Stamp: "+Date();
 </script>
 
-Type in your name as in place of your signature.
+Please sign by printing your name.
 
 <div class="row">
 <form method="post" action="consent.php">
 <label for="name">Enter Name:</label>
-<input type="text" required name="author"/>
+<input type="text" required />
 <input type="submit" value="Submit" />
 </form>
 </div>
