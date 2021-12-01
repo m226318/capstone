@@ -327,18 +327,18 @@ function playAgain(){
   playerid=document.cookie.split('=')[1];
   //need post it
 
-//var xml = new XMLHttpRequest();
-//xml.onreadystatechange = function() {
- //   if( xml.readyState==4 && xml.status==200 ){
-//        console.log( xml.responseText );
- ///   }
-//};
+var xml = new XMLHttpRequest();
+xml.onreadystatechange = function() {
+    if( xml.readyState==4 && xml.status==200 ){
+        console.log( xml.responseText );
+    }
+};
 
-//xml.open("POST", "https://aimemorygame.usna-cyber.org/game.php", false);
-//xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xml.open("POST", "https://aimemorygame.usna-cyber.org/game.php", false);
+xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-/// var data= '{ playerid=playerid,roundnum= roundnum,roundtime=timo,timeleft=timeto,clickedaibox=clickedaibox,aiboxnum=numaiboxes,correct=correct,score=score,bonusscore= secondscore,aiused= aiboxclicked}';
-//xml.send(data);
+ var data= '{ playerid=playerid,roundnum= roundnum,roundtime=timo,timeleft=timeto,clickedaibox=clickedaibox,aiboxnum=numaiboxes,correct=correct,score=score,bonusscore= secondscore,aiused= aiboxclicked}';
+xml.send(data);
 
 
 
@@ -347,7 +347,7 @@ function playAgain(){
     modal.classList.remove("show", "show1");
     console.log(document.querySelector('input[name="fav_language"]:checked').value);
     console.log('overall', minuteover, secondover, 'round', second)
- //window.location.replace("../game.php");
+ window.location.replace("../game.php");
     bo=0;
     startGame();
 }
