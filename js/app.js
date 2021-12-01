@@ -326,8 +326,8 @@ function playAgain(){
 
   playerid=document.cookie.split('=')[1];
   //need post it
- var xhr = new XMLHttprequest();
- xhr.open("POST", '../game.php', true);
+ var xhr = new XMLHttpRequest();
+ xhr.open("POST", '../game.php');
 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
 xhr.send({ playerid:playerid,roundnum: roundnum,roundtime:String(minute)+':'+String(second),timeleft:String(minuteover)+':'+String(secondover),clickedaibox:clickedaibox,aiboxnum:numaiboxes,correct:correct,score:score,bonusscore: secondscore,aiused: aiboxclicked});
 
