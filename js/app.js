@@ -312,13 +312,13 @@ document.body.onkeyup = function(e){
     }
 }
 
-function setid(x,y){
+function setid(x){
   con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
   //fix id with set far from consent
-  var sql = "select id from consent where name = ? and date = ?)";
-  var vas = [x,y];
+  var sql = "select id from consent where name = ?)";
+  var vas = [x];
   con.query(sql,vas, function (err, result) {
     if (err) throw err;
     console.log("retrived",result);
