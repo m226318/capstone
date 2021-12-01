@@ -50,6 +50,6 @@ if ($result->num_rows > 0) {
       printf($result);
       printf("end");
    $mysqli->close();
-$newURL="information.htm";
-header('Location: '.$newURL);
+$newURL="information.html";
+
 ?>
