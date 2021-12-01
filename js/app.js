@@ -330,14 +330,15 @@ var xhr = new XMLHttpRequest();
 xhr.open("POST", "https://reqbin.com/echo/post/json");
 xhr.setRequestHeader("Accept", "application/json");
 xhr.setRequestHeader("Content-Type", "application/json");
-
+var timo=String(minute)+':'+String(second);
+    var timetop=String(minuteover)+':'+String(secondover);
 xhr.onreadystatechange = function () {
    if (xhr.readyState === 4) {
       console.log(xhr.status);
       console.log(xhr.responseText);
    }};
 
- data: '{ "playerid":playerid,"roundnum": roundnum,"roundtime":String(minute)+':'+String(second),"timeleft":String(minuteover)+':'+String(secondover),"clickedaibox":clickedaibox, "aiboxnum":numaiboxes,"correct":correct,"score":score, "bonusscore": secondscore,"aiused": aiboxclicked}',
+ data: '{ "playerid":playerid,"roundnum": roundnum,"roundtime":timo,"timeleft":timetop,"clickedaibox":clickedaibox, "aiboxnum":numaiboxes,"correct":correct,"score":score, "bonusscore": secondscore,"aiused": aiboxclicked}',
 ;
 
 xhr.send(data);
