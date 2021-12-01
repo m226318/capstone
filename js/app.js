@@ -326,17 +326,22 @@ function playAgain(){
 
   playerid=document.cookie.split('=')[1];
   //need post it
-$.ajax({
-  type: "POST",
-  url: "https://reqbin.com/echo/post/json",
- data: '{ "playerid":playerid,"roundnum": roundnum,"roundtime":String(minute)+':'+String(second),"timeleft":String(minuteover)+':'+String(secondover),"clickedaibox":clickedaibox, "aiboxnum":numaiboxes,"correct":correct,"score":score, "bonusscore": secondscore,"aiused": aiboxclicked}',
-  success: function () {
-    if (xhr.readyState === 4) {
+var xhr = new XMLHttpRequest();
+xhr.open("POST", "https://reqbin.com/echo/post/json");
+xhr.setRequestHeader("Accept", "application/json");
+xhr.setRequestHeader("Content-Type", "application/json");
+
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
       console.log(xhr.status);
       console.log(xhr.responseText);
-  }},
-  dataType: "json"
-});
+   }};
+
+ data: '{ "playerid":playerid,"roundnum": roundnum,"roundtime":String(minute)+':'+String(second),"timeleft":String(minuteover)+':'+String(secondover),"clickedaibox":clickedaibox, "aiboxnum":numaiboxes,"correct":correct,"score":score, "bonusscore": secondscore,"aiused": aiboxclicked}',
+;
+
+xhr.send(data);
+
 
    //send data sql
     modal.classList.remove("show", "show1");
