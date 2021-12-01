@@ -59,7 +59,6 @@ function shuffle(array) {
 
 
 
-var mysql = require('mysql');
 
 var con = mysql.createConnection({
   host: "localhost",
