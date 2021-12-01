@@ -51,5 +51,5 @@ if ($result->num_rows > 0) {
       printf("end");
    $mysqli->close();
 $newURL="information.html";
-
+header('Location: '.$newURL);
 ?>
