@@ -323,8 +323,8 @@ function setid(x){
 function playAgain(){
  roundnum=roundnum+1;
   //fix id with set far from consent
-  window.alert(document.cookie);
-  playerid=1
+
+  playerid=document.cookie.split('=')[1];
   //need post it
   $.post("game.php", { playerid:playerid,roundnum: roundnum,roundtime:String(minute)+':'+String(second),timeleft:String(minuteover)+':'+String(secondover),clickedaibox:clickedaibox,aiboxnum:numaiboxes,correct:correct,score:score,bonusscore: secondscore,aiused: aiboxclicked});
 
