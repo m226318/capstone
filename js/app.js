@@ -326,22 +326,21 @@ function playAgain(){
 
   playerid=document.cookie.split('=')[1];
   //need post it
-var xhr = new XMLHttpRequest();
-xhr.open("POST", "https://aimemorygame.usna-cyber.org/game.php");
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-var timo=String(minute)+':'+String(second);
-    var timetop=String(minuteover)+':'+String(secondover);
-xhr.onreadystatechange = function () {
-   if (xhr.readyState === 4) {
-      console.log(xhr.status);
-      console.log(xhr.responseText);
-   }};
 
- var data= '{ "playerid":playerid,"roundnum": roundnum,"roundtime":timo,"timeleft":timetop,"clickedaibox":clickedaibox, "aiboxnum":numaiboxes,"correct":correct,"score":score, "bonusscore": secondscore,"aiused": aiboxclicked}';
+var xml = new XMLHttpRequest();
+xml.onreadystatechange = function() {
+    if( xml.readyState==4 && xml.status==200 ){
+        console.log( xml.responseText );
+    }
+};
+
+xml.open("POST", "https://aimemorygame.usna-cyber.org/game.php", false);
+xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+ var data= '{ playerid=playerid,roundnum= roundnum,roundtime=timo,timeleft=timeto,clickedaibox=clickedaibox,aiboxnum=numaiboxes,correct=correct,score=score,bonusscore= secondscore,aiused= aiboxclicked}';
+xml.send(data);
 
 
-xhr.send(data);
 
 
    //send data sql
