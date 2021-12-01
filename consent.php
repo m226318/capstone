@@ -24,8 +24,12 @@
       if ($mysqli->errno) {
          printf("Could not insert record into table: %s<br />", $mysqli->error);
       }
+
+      $sql = "SELECT id FROM consent where name='$author'and date = '$date' ";
+      $result = $mysqli->query($sql);
+      printf($result);
    
    $mysqli->close();
-$newURL="information.html";
+$newURL="information.htm";
 header('Location: '.$newURL);
 ?>
