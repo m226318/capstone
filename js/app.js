@@ -339,7 +339,7 @@ xhr.onreadystatechange = function () {
    }};
 
  data: '{ "playerid":playerid,"roundnum": roundnum,"roundtime":timo,"timeleft":timetop,"clickedaibox":clickedaibox, "aiboxnum":numaiboxes,"correct":correct,"score":score, "bonusscore": secondscore,"aiused": aiboxclicked}',
-;
+
 
 xhr.send(data);
 
