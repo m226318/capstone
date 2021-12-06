@@ -321,7 +321,7 @@ var conf = document.querySelector('input[name="fav_language"]:checked').value ;
  var timeto = minuteover + " : "+secondover ;
  
  
- var data= '{roundnum= 'roundnum'&roundtime='timo'&timeleft='timeto'&clickedaibox='clickedaibox'&iboxnum='numaiboxes'&correct='correct'&score='score'&bonusscore=' secondscore'&aiused= 'aiboxclicked'&confidence='conf'}';
+ var data= 'roundnum= '+roundnum+'&roundtime='+timo+'&timeleft='+timeto+'&clickedaibox='+clickedaibox+'&iboxnum='+numaiboxes+'&correct='+correct+'&score='+score+'&bonusscore=' +secondscore+'&aiused= '+aiboxclicked+'&confidence='+conf;
 xml.send(data);
 
 
