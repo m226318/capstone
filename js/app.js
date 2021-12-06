@@ -221,7 +221,7 @@ function startTimer(){
         if(secondover <= 0 && minuteover <=0){
 
 
-          location.replace("index.html");
+           location.replace("end.html");
         }
 
         if(second <= 0){
