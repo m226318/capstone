@@ -21,6 +21,7 @@ print("start");
       $basescore = $_POST['basescore'];
       $bonusscore=$_POST['bonusscore'];
       $clickedaibox=$_POST['clickedaibox'];
+$id=$_COOKIE['user'];
    $sql = "INSERT INTO info ". //need to add cookies to store user id and replace 1 here
          "(id,roundnum,roundtime,timeleft,aiused,aiboxnum,correct,basescore,bonusscore,clickedaibox) "."VALUES ".
          "($id,'$roundnum','$roundtime','$timeleft','$aiused','$aiboxnum','$correct',$basescore,'$bonusscore','$clickedaibox')";
