@@ -18,14 +18,14 @@ print("start");
       $aiused = $_POST['aiused'];
       $aiboxnum = $_POST['aiboxnum'];
       $correct = $_POST['correct'];
-      $basescore = $_POST['basescore'];
+      $basescore = $_POST['score'];
       $bonusscore=$_POST['bonusscore'];
       $clickedaibox=$_POST['clickedaibox'];
 $confidence=$_POST['confidence'];
 $id=$_COOKIE['user'];
-   $sql = "INSERT INTO info ". //need to add cookies to store user id and replace 1 here
+   $sql = "INSERT INTO round ". //need to add cookies to store user id and replace 1 here
          "(id,roundnum,roundtime,timeleft,aiused,aiboxnum,correct,basescore,bonusscore,clickedaibox,confidence) "."VALUES ".
-         "($id,'$roundnum','$roundtime','$timeleft','$aiused','$aiboxnum','$correct',$basescore,'$bonusscore','$clickedaibox','$confidence')";
+         "($id,$roundnum,'$roundtime','$timeleft',$aiused,$aiboxnum,$correct,$basescore,$bonusscore,$clickedaibox,'$confidence')";
 
     
 printf($sql);
