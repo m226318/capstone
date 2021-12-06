@@ -303,30 +303,10 @@ document.body.onkeyup = function(e){
     }
 }
 
-function setid(x){
-  con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-  //fix id with set far from consent
-  var sql = "select id from consent where name = ?)";
-  var vas = [x];
-  con.query(sql,vas, function (err, result) {
-    if (err) throw err;
-    console.log("retrived",result);
-   playerid=result;
-   console.log("set id",x);
-  });
-});
- connection.end();
-}
 // @desciption for user to play Again
 function playAgain(){
  roundnum=roundnum+1;
   //fix id with set far from consent
-
-  playerid=document.cookie.split('=')[1];
-  //need post it
-
 var xml = new XMLHttpRequest();
 xml.onreadystatechange = function() {
     if( xml.readyState==4 && xml.status==200 ){
@@ -336,8 +316,12 @@ xml.onreadystatechange = function() {
 
 xml.open("POST", "https://aimemorygame.usna-cyber.org/game.php", false);
 xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-var confidence = document.querySelector('input[name="fav_language"]:checked').value ;
- var data= '{ playerid='playerid'&roundnum= 'roundnum'&roundtime='timo'&timeleft='timeto'&clickedaibox='clickedaibox'&iboxnum='numaiboxes'&correct='correct'&score='score'&bonusscore=' secondscore'&aiused= 'aiboxclicked'&confidence='confidence'}';
+var conf = document.querySelector('input[name="fav_language"]:checked').value ;
+ var timo = minute +" : "+ second ;
+ var timeto = minuteover + " : "+secondover ;
+ 
+ 
+ var data= '{roundnum= 'roundnum'&roundtime='timo'&timeleft='timeto'&clickedaibox='clickedaibox'&iboxnum='numaiboxes'&correct='correct'&score='score'&bonusscore=' secondscore'&aiused= 'aiboxclicked'&confidence='conf'}';
 xml.send(data);
 
 
