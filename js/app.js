@@ -337,7 +337,7 @@ xml.onreadystatechange = function() {
 xml.open("POST", "https://aimemorygame.usna-cyber.org/game.php", false);
 xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 var confidence = document.querySelector('input[name="fav_language"]:checked').value ;
- var data= '{ playerid=playerid,roundnum= roundnum,roundtime=timo,timeleft=timeto,clickedaibox=clickedaibox,aiboxnum=numaiboxes,correct=correct,score=score,bonusscore= secondscore,aiused= aiboxclicked, confidence=confidence}';
+ var data= '{ playerid='playerid'&roundnum= 'roundnum'&roundtime='timo'&timeleft='timeto'&clickedaibox='clickedaibox'&iboxnum='numaiboxes'&correct='correct'&score='score'&bonusscore=' secondscore'&aiused= 'aiboxclicked'&confidence='confidence'}';
 xml.send(data);
 
 
